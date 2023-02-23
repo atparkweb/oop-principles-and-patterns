@@ -26,18 +26,18 @@ If we keep only one class, each change for a responsibility might affect the oth
 -   Adding a new content type (like html) make us to add code for each protocol implemented.
 
 ```java
-// single responsibility principle - bad example  
-  
-interface IEmail {  
-	public void setSender(String sender);  
-	public void setReceiver(String receiver);  
-	public void setContent(String content);  
-}  
-  
-class Email implements IEmail {  
-	public void setSender(String sender) {// set sender; }  
-	public void setReceiver(String receiver) {// set receiver; }  
-	public void setContent(String content) {// set content; }  
+// single responsibility principle - bad example
+
+interface IEmail {
+	public void setSender(String sender);
+	public void setReceiver(String receiver);
+	public void setContent(String content);
+}
+
+class Email implements IEmail {
+	public void setSender(String sender) {// set sender; }
+	public void setReceiver(String receiver) {// set receiver; }
+	public void setContent(String content) {// set content; }
 }
 ```
 
@@ -47,21 +47,21 @@ We can create a new interface and class called IContent and Content to split the
 -   adding a new type of content supported causes changes only in Content class.
 
 ```java
-// single responsibility principle - good example  
-interface IEmail {  
-	public void setSender(String sender);  
-	public void setReceiver(String receiver);  
-	public void setContent(IContent content);  
-}  
-  
-interface Content {  
-	public String getAsString(); // used for serialization  
-}  
-  
-class Email implements IEmail {  
-	public void setSender(String sender) {// set sender; }  
-	public void setReceiver(String receiver) {// set receiver; }  
-	public void setContent(IContent content) {// set content; }  
+// single responsibility principle - good example
+interface IEmail {
+	public void setSender(String sender);
+	public void setReceiver(String receiver);
+	public void setContent(IContent content);
+}
+
+interface Content {
+	public String getAsString(); // used for serialization
+}
+
+class Email implements IEmail {
+	public void setSender(String sender) {// set sender; }
+	public void setReceiver(String receiver) {// set receiver; }
+	public void setContent(IContent content) {// set content; }
 }
 ```
 

@@ -29,7 +29,7 @@ interface IWorker {
 	public void eat();
 }
 
-class Worker implements IWorker{
+class Worker implements IWorker {
 	public void work() {
 		// ....working
 	}
@@ -38,7 +38,7 @@ class Worker implements IWorker{
 	}
 }
 
-class SuperWorker implements IWorker{
+class SuperWorker implements IWorker {
 	public void work() {
 		//.... working much more
 	}

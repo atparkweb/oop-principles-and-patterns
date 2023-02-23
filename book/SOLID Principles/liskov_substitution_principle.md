@@ -24,62 +24,56 @@ Below is the classic example for which the Likov's Substitution Principle is vio
 
 ```java
 // Violation of Likov's Substitution Principle
-class Rectangle
-{
+class Rectangle {
 	protected int m_width;
 	protected int m_height;
 
-	public void setWidth(int width){
+	public void setWidth(int width) {
 		m_width = width;
 	}
 
-	public void setHeight(int height){
+	public void setHeight(int height) {
 		m_height = height;
 	}
 
 
-	public int getWidth(){
+	public int getWidth() {
 		return m_width;
 	}
 
-	public int getHeight(){
+	public int getHeight() {
 		return m_height;
 	}
 
-	public int getArea(){
+	public int getArea() {
 		return m_width * m_height;
 	}	
 }
 
-class Square extends Rectangle 
-{
-	public void setWidth(int width){
+class Square extends Rectangle {
+	public void setWidth(int width) {
 		m_width = width;
 		m_height = width;
 	}
 
-	public void setHeight(int height){
+	public void setHeight(int height) {
 		m_width = height;
 		m_height = height;
 	}
-
 }
 
-class LspTest
-{
-	private static Rectangle getNewRectangle()
-	{
+class LspTest {
+	private static Rectangle getNewRectangle() {
 		// it can be an object returned by some factory ... 
 		return new Square();
 	}
 
-	public static void main (String args[])
-	{
+	public static void main (String args[]) {
 		Rectangle r = LspTest.getNewRectangle();
         
 		r.setWidth(5);
 		r.setHeight(10);
-		// user knows that r it's a rectangle. 
+		// user knows that r it's a rectangle.
 		// It assumes that he's able to set the width and height as for the base class
 
 		System.out.println(r.getArea());
