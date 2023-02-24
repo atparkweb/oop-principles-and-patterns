@@ -15,7 +15,18 @@ The singleton pattern is one of the simplest design patterns: it involves only o
 
 The implementation involves a static member in the **Singleton** class which keeps the reference to the instance, a private constructor and a static public method that returns the static member reference.
 
-TODO: UML Figure
+```mermaid
+---
+title: Singleton Class
+---
+classDiagram
+	class Singleton{
+	-instance: Singleton
+	-Singleton()
+	+getInstance(): Singleton
+	}
+	Singleton <-- Singleton
+```
 
 The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. `getInstance()` is is responsible for creating its class unique instance in case it is not created yet and to return that instance.
 
