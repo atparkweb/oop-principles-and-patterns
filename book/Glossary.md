@@ -1,0 +1,1 @@
+Gang of Four (GoF) - Refers to the four authors of *Design Patterns*: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
